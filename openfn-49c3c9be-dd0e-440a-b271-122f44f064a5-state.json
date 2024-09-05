@@ -4,12 +4,17 @@
   "description": null,
   "inserted_at": "2024-09-05T16:03:07Z",
   "updated_at": "2024-09-05T16:03:07Z",
-  "project_credentials": {},
+  "project_credentials": {
+    "ayodele@openfn.org-Ayodele_Testing_Underscores": {
+      "id": "82980209-cc99-4503-954f-828b8a3cdab4",
+      "name": "Ayodele_Testing_Underscores",
+      "owner": "ayodele@openfn.org"
+    }
+  },
   "scheduled_deletion": null,
   "history_retention_period": null,
   "dataclip_retention_period": null,
   "retention_policy": "retain_all",
-  "requires_mfa": false,
   "workflows": {
     "test-with-dangling-node": {
       "id": "6aef35fa-1f2d-4ca0-b0d7-1e696e1c58ad",
@@ -56,5 +61,6 @@
         }
       }
     }
-  }
+  },
+  "requires_mfa": false
 }

@@ -1,6 +1,9 @@
 name: regression-testing
 description: null
-credentials: null
+credentials:
+  ayodele@openfn.org-Ayodele_Testing_Underscores:
+    name: Ayodele_Testing_Underscores
+    owner: ayodele@openfn.org
 workflows:
   test-with-dangling-node:
     name: test with dangling node
