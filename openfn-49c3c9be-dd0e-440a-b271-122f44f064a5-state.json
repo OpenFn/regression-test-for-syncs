@@ -19,8 +19,8 @@
     "test-with-dangling-node": {
       "id": "6aef35fa-1f2d-4ca0-b0d7-1e696e1c58ad",
       "name": "test with dangling node",
-      "inserted_at": "2024-09-05T16:33:59.518521Z",
-      "lock_version": 4,
+      "inserted_at": "2024-09-05T16:42:02.600561Z",
+      "lock_version": 5,
       "triggers": {
         "webhook": {
           "enabled": true,
@@ -49,6 +49,13 @@
           "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
           "adaptor": "@openfn/language-common@latest",
           "project_credential_id": null
+        },
+        "Another-branch": {
+          "id": "fcc8ef94-9dee-4dfc-80c0-6fdb89214ef6",
+          "name": "Another branch",
+          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
+          "adaptor": "@openfn/language-common@latest",
+          "project_credential_id": null
         }
       },
       "edges": {
@@ -72,6 +79,13 @@
           "source_job_id": "887ac6c9-7640-4f66-8f7d-55cb151a163b",
           "condition_type": "on_job_success",
           "target_job_id": "f8e89521-fed1-4ae0-837e-04e9753e07ee"
+        },
+        "Do-something-new->Another-branch": {
+          "enabled": true,
+          "id": "090d2320-8f00-413f-89bc-b7fb06d938bb",
+          "source_job_id": "887ac6c9-7640-4f66-8f7d-55cb151a163b",
+          "condition_type": "on_job_success",
+          "target_job_id": "fcc8ef94-9dee-4dfc-80c0-6fdb89214ef6"
         }
       }
     }

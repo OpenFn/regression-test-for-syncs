@@ -35,6 +35,15 @@ workflows:
           // Check out the Job Writing Guide for help getting started:
           // https://docs.openfn.org/documentation/jobs/job-writing-guide
 
+      Another-branch:
+        name: Another branch
+        adaptor: '@openfn/language-common@latest'
+        credential: null
+        body: |
+          
+          // Check out the Job Writing Guide for help getting started:
+          // https://docs.openfn.org/documentation/jobs/job-writing-guide
+
     triggers:
       webhook:
         type: webhook
@@ -53,5 +62,10 @@ workflows:
       Do-something-new->Fix-this:
         source_job: Do-something-new
         target_job: Fix-this
+        condition_type: on_job_success
+        enabled: true
+      Do-something-new->Another-branch:
+        source_job: Do-something-new
+        target_job: Another-branch
         condition_type: on_job_success
         enabled: true
