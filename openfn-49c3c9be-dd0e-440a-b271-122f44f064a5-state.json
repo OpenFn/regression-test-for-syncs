@@ -15,6 +15,7 @@
   "history_retention_period": null,
   "dataclip_retention_period": null,
   "retention_policy": "retain_all",
+  "requires_mfa": false,
   "workflows": {
     "test-with-dangling-node": {
       "id": "6aef35fa-1f2d-4ca0-b0d7-1e696e1c58ad",
@@ -61,6 +62,5 @@
         }
       }
     }
-  },
-  "requires_mfa": false
+  }
 }
