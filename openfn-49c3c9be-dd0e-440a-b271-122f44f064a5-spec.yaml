@@ -59,11 +59,6 @@ workflows:
         target_job: Do-something-new
         condition_type: on_job_success
         enabled: true
-      Do-something-new->Fix-this:
-        source_job: Do-something-new
-        target_job: Fix-this
-        condition_type: on_job_success
-        enabled: true
       Do-something-new->Another-branch:
         source_job: Do-something-new
         target_job: Another-branch
