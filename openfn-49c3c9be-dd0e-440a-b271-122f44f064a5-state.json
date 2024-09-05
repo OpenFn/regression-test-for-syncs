@@ -3,7 +3,7 @@
   "name": "regression-testing",
   "description": null,
   "inserted_at": "2024-09-05T16:03:07Z",
-  "updated_at": "2024-09-05T16:03:07Z",
+  "updated_at": "2024-09-05T16:33:08Z",
   "project_credentials": {
     "ayodele@openfn.org-Ayodele_Testing_Underscores": {
       "id": "82980209-cc99-4503-954f-828b8a3cdab4",
@@ -19,31 +19,6 @@
     "test-with-dangling-node": {
       "id": "6aef35fa-1f2d-4ca0-b0d7-1e696e1c58ad",
       "name": "test with dangling node",
-      "inserted_at": "2024-09-05T16:03:50.552947Z",
-      "lock_version": 2,
-      "triggers": {
-        "webhook": {
-          "enabled": true,
-          "id": "fea38a01-e8e5-4bd8-88b0-c47e66e6e65a",
-          "type": "webhook"
-        }
-      },
-      "jobs": {
-        "New-job": {
-          "id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4",
-          "name": "New job",
-          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
-          "adaptor": "@openfn/language-common@latest",
-          "project_credential_id": null
-        },
-        "Do-something-new": {
-          "id": "887ac6c9-7640-4f66-8f7d-55cb151a163b",
-          "name": "Do something new",
-          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
-          "adaptor": "@openfn/language-common@latest",
-          "project_credential_id": null
-        }
-      },
       "edges": {
         "webhook->New-job": {
           "enabled": true,
@@ -58,6 +33,34 @@
           "source_job_id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4",
           "condition_type": "on_job_success",
           "target_job_id": "887ac6c9-7640-4f66-8f7d-55cb151a163b"
+        }
+      },
+      "concurrency": null,
+      "inserted_at": "2024-09-05T16:03:31Z",
+      "updated_at": "2024-09-05T16:33:08Z",
+      "jobs": {
+        "New-job": {
+          "id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4",
+          "name": "New job in a test",
+          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
+          "adaptor": "@openfn/language-common@latest",
+          "project_credential_id": null
+        },
+        "Do-something-new": {
+          "id": "887ac6c9-7640-4f66-8f7d-55cb151a163b",
+          "name": "Do something new",
+          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
+          "adaptor": "@openfn/language-common@latest",
+          "project_credential_id": null
+        }
+      },
+      "deleted_at": null,
+      "lock_version": 3,
+      "triggers": {
+        "webhook": {
+          "enabled": true,
+          "id": "fea38a01-e8e5-4bd8-88b0-c47e66e6e65a",
+          "type": "webhook"
         }
       }
     }
