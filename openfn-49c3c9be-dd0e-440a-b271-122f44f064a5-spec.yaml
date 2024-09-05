@@ -9,7 +9,7 @@ workflows:
     name: test with dangling node
     jobs:
       New-job:
-        name: New job
+        name: New job in a test
         adaptor: '@openfn/language-common@latest'
         credential: null
         body: |
