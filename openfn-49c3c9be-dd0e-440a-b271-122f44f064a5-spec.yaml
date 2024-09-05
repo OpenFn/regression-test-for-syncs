@@ -8,7 +8,7 @@ workflows:
   test-with-dangling-node:
     name: test with dangling node
     jobs:
-      New-job:
+      New-job-in-a-test:
         name: New job in a test
         adaptor: '@openfn/language-common@latest'
         credential: null
@@ -26,18 +26,32 @@ workflows:
           // Check out the Job Writing Guide for help getting started:
           // https://docs.openfn.org/documentation/jobs/job-writing-guide
 
+      Fix-this:
+        name: Fix this
+        adaptor: '@openfn/language-common@latest'
+        credential: null
+        body: |
+          
+          // Check out the Job Writing Guide for help getting started:
+          // https://docs.openfn.org/documentation/jobs/job-writing-guide
+
     triggers:
       webhook:
         type: webhook
         enabled: true
     edges:
-      webhook->New-job:
+      webhook->New-job-in-a-test:
         source_trigger: webhook
-        target_job: New-job
+        target_job: New-job-in-a-test
         condition_type: always
         enabled: true
-      New-job->Do-something-new:
-        source_job: New-job
+      New-job-in-a-test->Do-something-new:
+        source_job: New-job-in-a-test
         target_job: Do-something-new
+        condition_type: on_job_success
+        enabled: true
+      Do-something-new->Fix-this:
+        source_job: Do-something-new
+        target_job: Fix-this
         condition_type: on_job_success
         enabled: true

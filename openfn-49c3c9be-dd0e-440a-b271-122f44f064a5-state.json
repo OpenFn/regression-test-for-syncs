@@ -19,27 +19,17 @@
     "test-with-dangling-node": {
       "id": "6aef35fa-1f2d-4ca0-b0d7-1e696e1c58ad",
       "name": "test with dangling node",
-      "edges": {
-        "webhook->New-job": {
+      "inserted_at": "2024-09-05T16:33:59.518521Z",
+      "lock_version": 4,
+      "triggers": {
+        "webhook": {
           "enabled": true,
-          "id": "4390223a-0ef3-4bb1-8fc3-c81d998b01c9",
-          "source_trigger_id": "fea38a01-e8e5-4bd8-88b0-c47e66e6e65a",
-          "condition_type": "always",
-          "target_job_id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4"
-        },
-        "New-job->Do-something-new": {
-          "enabled": true,
-          "id": "b1282999-771d-4043-86cc-bbb43f7ed37d",
-          "source_job_id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4",
-          "condition_type": "on_job_success",
-          "target_job_id": "887ac6c9-7640-4f66-8f7d-55cb151a163b"
+          "id": "fea38a01-e8e5-4bd8-88b0-c47e66e6e65a",
+          "type": "webhook"
         }
       },
-      "concurrency": null,
-      "inserted_at": "2024-09-05T16:03:31Z",
-      "updated_at": "2024-09-05T16:33:08Z",
       "jobs": {
-        "New-job": {
+        "New-job-in-a-test": {
           "id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4",
           "name": "New job in a test",
           "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
@@ -52,15 +42,36 @@
           "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
           "adaptor": "@openfn/language-common@latest",
           "project_credential_id": null
+        },
+        "Fix-this": {
+          "id": "f8e89521-fed1-4ae0-837e-04e9753e07ee",
+          "name": "Fix this",
+          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n",
+          "adaptor": "@openfn/language-common@latest",
+          "project_credential_id": null
         }
       },
-      "deleted_at": null,
-      "lock_version": 3,
-      "triggers": {
-        "webhook": {
+      "edges": {
+        "webhook->New-job-in-a-test": {
           "enabled": true,
-          "id": "fea38a01-e8e5-4bd8-88b0-c47e66e6e65a",
-          "type": "webhook"
+          "id": "4390223a-0ef3-4bb1-8fc3-c81d998b01c9",
+          "source_trigger_id": "fea38a01-e8e5-4bd8-88b0-c47e66e6e65a",
+          "condition_type": "always",
+          "target_job_id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4"
+        },
+        "New-job-in-a-test->Do-something-new": {
+          "enabled": true,
+          "id": "b1282999-771d-4043-86cc-bbb43f7ed37d",
+          "source_job_id": "abb99c8f-3dc0-45ef-8c12-14a173a22db4",
+          "condition_type": "on_job_success",
+          "target_job_id": "887ac6c9-7640-4f66-8f7d-55cb151a163b"
+        },
+        "Do-something-new->Fix-this": {
+          "enabled": true,
+          "id": "cc4a9f94-d5b7-4b56-894b-71c080794b82",
+          "source_job_id": "887ac6c9-7640-4f66-8f7d-55cb151a163b",
+          "condition_type": "on_job_success",
+          "target_job_id": "f8e89521-fed1-4ae0-837e-04e9753e07ee"
         }
       }
     }
