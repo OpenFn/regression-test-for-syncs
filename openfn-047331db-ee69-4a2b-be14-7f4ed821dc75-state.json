@@ -14,8 +14,8 @@
     "yes": {
       "id": "0ff77279-b889-4a81-b8f7-9a9448d29671",
       "name": "yes",
-      "inserted_at": "2025-01-10T13:59:35.764318Z",
-      "lock_version": 2,
+      "inserted_at": "2025-01-10T14:03:34.964712Z",
+      "lock_version": 3,
       "triggers": {
         "webhook": {
           "enabled": false,
@@ -27,7 +27,7 @@
         "New-job": {
           "id": "faee6eb6-d901-4e1d-85ef-65045a0f008b",
           "name": "New job",
-          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\noiiiii",
+          "body": "\n// Check out the Job Writing Guide for help getting started:\n// https://docs.openfn.org/documentation/jobs/job-writing-guide\n//oiiiii",
           "adaptor": "@openfn/language-common@latest",
           "project_credential_id": null
         }
